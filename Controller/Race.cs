@@ -31,9 +31,6 @@ namespace Controller
             }
         }
 
-        
-
-
         public SectionData GetSectionData(Section s)
         {
            if (_positions.ContainsKey(s))
@@ -48,6 +45,11 @@ namespace Controller
                 return _positions[s];
             }
             return null;
+        }
+
+        public void StartPositions(List<IParticipant> p, Track t)
+        {
+
         }
 
     }

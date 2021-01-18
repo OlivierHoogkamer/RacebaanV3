@@ -21,7 +21,7 @@ namespace Controller
         {
             if (c.Tracks != null)
             {
-                CurrentRace = new Race(c.NextTrack(c), c.Participants);
+                CurrentRace = new Race(c.NextTrack(), c.Participants);
             }
             
         }
@@ -39,9 +39,17 @@ namespace Controller
             }
             public static void AddTrack(Competition c)
             {
-                var Track1 = new Track("Zandvoort");
-                var Track2 = new Track("Abu Dhabi");
-                var Track3 = new Track("Monaco");
+                SectionTypes[] t1 = new SectionTypes[5];
+                t1[0] = SectionTypes.Straight;
+                t1[1] = SectionTypes.Straight;
+                t1[2] = SectionTypes.Straight;
+                t1[3] = SectionTypes.Straight;
+                t1[4] = SectionTypes.Straight;
+                
+
+                var Track1 = new Track("Zandvoort", t1);
+                var Track2 = new Track("Abu Dhabi", t1);
+                var Track3 = new Track("Monaco", t1);
 
                 
                 c.Tracks.Enqueue(Track1);

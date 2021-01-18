@@ -16,15 +16,16 @@ namespace Model
         }
 
 
-        public Track NextTrack(Competition c)
+        public Track NextTrack()
         {
-            if (c.Tracks.Count == 0)
+            if (Tracks.Count == 0)
             {
                 Console.WriteLine("queue empty");
                 return null;
             }
+            return Tracks.Dequeue();
+            
           
-            return c.Tracks.Dequeue();
         }
     }
 }

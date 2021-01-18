@@ -7,12 +7,10 @@ namespace RacebaanV3
         static void Main(string[] args)
         {
             var c = new Model.Competition();
-            Controller.Data.Initialize(c);
-            Controller.Data.NextRace(c);
-            Console.WriteLine(Controller.Data.CurrentRace.Track.Name);
-            Controller.Data.NextRace(c);
-            Console.WriteLine(Controller.Data.CurrentRace.Track.Name);
 
+            Controller.Data.Initialize(c);
+            
+            Visualization.DrawTrack((c.NextTrack()));
             for (; ; )
             {
                 System.Threading.Thread.Sleep(100);
